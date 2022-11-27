@@ -1,4 +1,8 @@
-# First Interfaction Frontend Framework (FIFF) - AvaloniaUI
+# starter-template-avalonia
+
+## Getting Started
+** read this first **  
+https://github.com/edwinbernadus/starter-template-frontend-framework
 
 ## Getting Started
 https://github.com/edwinbernadus/first-interaction-frontend-framework
