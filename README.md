@@ -4,10 +4,6 @@
 ** read this first **  
 https://github.com/edwinbernadus/starter-template-frontend-framework
 
-## Getting Started
-https://github.com/edwinbernadus/first-interaction-frontend-framework
-
-
 ## Snippet List
 - hint_create_button
 ````csharp
