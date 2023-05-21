@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AvaloniaProject">
+    <option name="projectPerEditor">
+      <map>
+        <entry key="App.axaml" value="MyApp.csproj" />
+        <entry key="FirstPageView.axaml" value="MyApp.csproj" />
+        <entry key="ListPageWindow.axaml" value="MyApp.csproj" />
+        <entry key="MainWindow.axaml" value="MyApp.csproj" />
+        <entry key="SecondPageView.axaml" value="MyApp.csproj" />
+        <entry key="Views/FirstPageView.axaml" value="MyApp.csproj" />
+        <entry key="Views/ListPageView.axaml" value="MyApp.csproj" />
+        <entry key="Views/ListPageWindow.axaml" value="MyApp.csproj" />
+        <entry key="Views/MainWindow.axaml" value="MyApp.csproj" />
+        <entry key="Views/SecondPageView.axaml" value="MyApp.csproj" />
+        <entry key="Views/StartPageView.axaml" value="MyApp.csproj" />
+        <entry key="Views/StartWindow.axaml" value="MyApp.csproj" />
+        <entry key="Views2/FirstPageView.axaml" value="MyApp.csproj" />
+        <entry key="Views2/MainWindow.axaml" value="MyApp.csproj" />
+        <entry key="Views2/SecondPageView.axaml" value="MyApp.csproj" />
+      </map>
+    </option>
+  </component>
+</project>

@@ -1,24 +1,36 @@
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Net.Http;
+using System.Reactive;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
-using MyApp.Interface;
+using System.Windows.Input;
 using MyApp.Models;
+using MyApp.Navigator;
 using Newtonsoft.Json;
+using ReactiveUI;
 
 namespace MyApp.ViewModels
 {
-    public class MvListPage : INotifyPropertyChanged
+    public class ListPageViewModel : PageViewModelBase , INotifyPropertyChanged
     {
-        private readonly IGoBack _goBack;
+        public ListPageViewModel()
+        {
+            var vm = this;
+            vm.InfoListPage = "list page";
+            OnLoadDataCommand = ReactiveCommand.Create(GetContentFromWeb);
+        }
+
+        public ICommand OnLoadDataCommand { get; set; }
+
         public string InfoListPage { get; set; } = "";
 
 
-        private List<MvListPageDetail> _items = new List<MvListPageDetail>();
+        private List<ListPageDetailViewModel> _items = new List<ListPageDetailViewModel>();
 
-        public List<MvListPageDetail> Items
+        public List<ListPageDetailViewModel> Items
         {
             get => _items;
             set
@@ -68,15 +80,6 @@ namespace MyApp.ViewModels
         }
 
 
-        public MvListPage(IGoBack goBack)
-        {
-            _goBack = goBack;
-        }
-
-        public void OnGoBackClickCommand()
-        {
-            _goBack.DoGoBack();
-        }
 
         public async Task GetContentFromWeb()
         {
@@ -92,7 +95,7 @@ namespace MyApp.ViewModels
             var items = JsonConvert.DeserializeObject<List<PlaceHolderItem>>(content);
             this.Items = items
                 .Take(10)
-                .Select(x => new MvListPageDetail(this)
+                .Select(x => new ListPageDetailViewModel(this)
             {
                 id = x.id,
                 userId = x.userId,
@@ -102,12 +105,18 @@ namespace MyApp.ViewModels
             this.IsVisibleContent = true;
         }
 
-
+     
+     
         public event PropertyChangedEventHandler? PropertyChanged;
 
         protected virtual void OnPropertyChanged([CallerMemberName] string? propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
+        public override bool CanNavigateNext { get; protected set; }
+        public override bool CanNavigatePrevious { get; protected set; } = true;
     }
+
+ 
 }

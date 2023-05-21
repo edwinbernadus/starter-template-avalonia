@@ -1,0 +1,43 @@
+<UserControl x:Class="MyApp.Views.ListPageView"
+             xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModels="clr-namespace:MyApp.ViewModels"
+             d:DesignHeight="450"
+             d:DesignWidth="800"
+             x:CompileBindings="True"
+             x:DataType="viewModels:ListPageViewModel"
+             mc:Ignorable="d">
+    <Design.DataContext>
+        <viewModels:ListPageViewModel />
+    </Design.DataContext>
+
+    <StackPanel>
+        <!-- <Button Width="160" Command="{Binding OnGoBackClickCommand}">go back</Button> -->
+
+        <TextBlock Text="{Binding InfoListPage}" />
+        <Button Width="160" Command="{Binding OnLoadDataCommand}">Load Data </Button>
+        <TextBlock Text="Loading... " IsVisible="{Binding IsVisibleLoading,Mode=TwoWay}" />
+
+        <TextBlock Text="{Binding DisplayInfoAlert,Mode=TwoWay}" FontStyle="Italic" />
+        
+        
+
+        <!-- // hint_show_webservice_result_on_list -->
+        <ItemsControl Items="{Binding Items}" IsVisible="{Binding IsVisibleContent,Mode=TwoWay}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding title}" />
+                        <!-- //hint_button_on_list -->
+                        <Button Width="160" Command="{Binding OnInfoClickCommand}">Info</Button>
+                    </StackPanel>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+
+
+    </StackPanel>
+    
+</UserControl>

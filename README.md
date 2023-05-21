@@ -13,7 +13,8 @@ https://github.com/edwinbernadus/starter-template-frontend-framework
 - hint_open_new_page
 ````csharp
 // hint_open_new_page
-var result = await dialog.ShowDialog<MvListPage>(this);
+var vm = MainWindowViewModel.CurrentContext;
+vm.NavigateNext();
 ````
 - hint_loading_webservice
 ````csharp

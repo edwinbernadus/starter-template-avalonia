@@ -1,6 +1,20 @@
+<!-- <Application xmlns="https://github.com/avaloniaui" -->
+<!--              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" -->
+<!--              x:Class="MyApp.App"> -->
+<!--     <Application.Styles> -->
+<!--         <FluentTheme Mode="Light"/> -->
+<!--     </Application.Styles> -->
+<!-- </Application> -->
+
+
 <Application xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:navigator="clr-namespace:MyApp.Navigator"
              x:Class="MyApp.App">
+    <Application.DataTemplates>
+        <navigator:ViewLocator/>
+    </Application.DataTemplates>
+
     <Application.Styles>
         <FluentTheme Mode="Light"/>
     </Application.Styles>
