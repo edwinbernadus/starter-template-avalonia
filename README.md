@@ -4,6 +4,9 @@
 ** read this first **  
 https://github.com/edwinbernadus/starter-template-frontend-framework
 
+plain / non-MVVM version avaiable in  
+https://github.com/edwinbernadus/starter-template-avalonia/tree/non-mvvm-version
+
 ## Snippet List
 - hint_create_button
 ````csharp
